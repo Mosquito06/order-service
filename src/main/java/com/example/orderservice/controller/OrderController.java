@@ -65,10 +65,10 @@ public class OrderController
 //        orderDto.setTotalPrice( orderDto.getQty() * orderDto.getUnitPrice() );
 
         /* send this order to the kafka */
-//        kafkaProducer.send("example-catalog-topic", orderDto);
+        kafkaProducer.send("example-catalog-topic", orderDto);
 //        orderProducer.send("orders", orderDto);
 
-        //ResponseOrder responseOrder = mapper.map(orderDto, ResponseOrder.class);
+//        ResponseOrder responseOrder = mapper.map(orderDto, ResponseOrder.class);
 
         log.info("After added order data");
         return ResponseEntity.status(HttpStatus.CREATED).body(responseOrder);
